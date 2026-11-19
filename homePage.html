@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Handset – Buy new smartphones</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Sora:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style/homePage.css">
+<link rel="stylesheet" href="style/footer.css">
+</head>
+<body>
+
+<header class="top">
+  <a class="logo" href="#">Handset</a>
+  <input id="search" type="search" placeholder="Search phones" aria-label="Search phones">
+  <button id="cartBtn" class="cart-btn" aria-label="Open cart">Cart <span id="count">0</span></button>
+</header>
+
+<main>
+  <section class="hero">
+    <div>
+      <h1>New phones, sealed in the box.</h1>
+      <p>Compare prices and specs, pick your colour, and order in a minute. Every phone comes with a 1-year warranty.</p>
+      <a class="btn" href="#shop">Shop phones</a>
+    </div>
+    <div class="stage" aria-label="Phone colour preview">
+      <div class="phone big" id="heroPhone"></div>
+      <div class="swatches" id="heroSwatches"></div>
+    </div>
+  </section>
+
+  <section id="shop" class="shop">
+    <div class="bar">
+      <div id="brands" class="brands"></div>
+      <select id="sort" aria-label="Sort phones">
+        <option value="featured">Sort: Featured</option>
+        <option value="low">Price: Low to high</option>
+        <option value="high">Price: High to low</option>
+      </select>
+    </div>
+    <div id="grid" class="grid"></div>
+    <p id="empty" class="empty" hidden>No phones match your search. Try another name or brand.</p>
+  </section>
+
+  <section class="perks">
+    <div><strong>Free delivery</strong><span>On every order over $300</span></div>
+    <div><strong>1-year warranty</strong><span>Covers manufacturer faults</span></div>
+    <div><strong>7-day returns</strong><span>Unopened phones, full refund</span></div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<div id="overlay" class="overlay" hidden></div>
+
+<aside id="cart" class="drawer" aria-label="Shopping cart" aria-hidden="true">
+  <div class="drawer-head"><h2>Your cart</h2><button id="closeCart" class="x" aria-label="Close cart">×</button></div>
+  <div id="items" class="items"></div>
+  <div class="drawer-foot">
+    <div class="total"><span>Total</span><strong id="total">$0</strong></div>
+    <button id="checkoutBtn" class="btn full">Check out</button>
+  </div>
+</aside>
+
+<div id="toast" class="toast" role="status"></div>
+<script src="data/products.js"></script>
+<script src="script/homePage.js"></script>
+<script src="script/foooter.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout – Handset</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Sora:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style/homePage.css">
+<link rel="stylesheet" href="style/checkoutPage/checkoutPage.css">
+<link rel="stylesheet" href="style/footer.css">
+</head>
+<body>
+
+<header class="top">
+  <a class="logo" href="homePage.html">Handset</a>
+  <a class="back" href="homePage.html#shop">← Keep shopping</a>
+</header>
+
+<main class="co">
+  <ol class="steps" id="steps" aria-label="Checkout progress">
+    <li class="ok">Cart</li>
+    <li class="on" aria-current="step">Your details</li>
+    <li>Confirmation</li>
+  </ol>
+
+  <form id="orderForm" class="co-form">
+    <h1>Checkout</h1>
+
+    <fieldset>
+      <legend>Contact</legend>
+      <label>Full name
+        <input name="name" autocomplete="name" required>
+      </label>
+      <label>Phone number
+        <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="012 345 678" required aria-describedby="phoneErr">
+        <span id="phoneErr" class="field-error" hidden></span>
+      </label>
+      <label>Email <em>(optional)</em>
+        <input name="email" type="email" autocomplete="email" placeholder="For your receipt">
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Delivery address</legend>
+      <label>Street and area
+        <textarea name="address" rows="2" autocomplete="street-address" required></textarea>
+      </label>
+      <label>City or province
+        <input name="city" autocomplete="address-level1" required>
+      </label>
+      <label>Note for the courier <em>(optional)</em>
+        <input name="note" placeholder="Gate code, landmark, best time">
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Payment</legend>
+      <div class="pay">
+        <label>
+          <input type="radio" name="pay" value="cod" checked>
+          <span><strong>Pay when it arrives</strong><small>Cash to the courier. Nothing to pay now.</small></span>
+        </label>
+        <label>
+          <input type="radio" name="pay" value="bank">
+          <span><strong>Bank transfer</strong><small>We send the account details after you order.</small></span>
+        </label>
+      </div>
+    </fieldset>
+
+    <p id="error" class="error" role="alert" hidden></p>
+    <button type="submit" id="submitBtn" class="btn full big">Place order</button>
+    <p class="trust">1-year warranty · 7-day returns on unopened phones</p>
+  </form>
+
+  <aside id="summary" class="summary" aria-label="Order summary">
+    <h2>Your order</h2>
+    <div id="free" class="meter" hidden>
+      <p id="freeMsg"></p>
+      <div class="track"><div id="freeFill"></div></div>
+    </div>
+    <div id="lines"></div>
+    <dl>
+      <div><dt>Subtotal</dt><dd id="sub">$0</dd></div>
+      <div><dt>Delivery</dt><dd id="ship">$0</dd></div>
+      <div class="grand"><dt>Total</dt><dd id="grand">$0</dd></div>
+    </dl>
+  </aside>
+
+  <!-- Step 3: Confirmation -->
+  <section id="confirmation" class="review" aria-labelledby="reviewTitle" hidden>
+    <header class="review-head">
+      <p class="eyebrow">Almost done</p>
+      <h1 id="reviewTitle" tabindex="-1">Review your order</h1>
+      <p>Check the details below. Your order is only sent when you press <strong>Confirm order</strong>.</p>
+      <p class="order-chip">Order <strong id="reviewNo"></strong></p>
+    </header>
+
+    <div id="confirmationDetails" class="review-body"></div>
+
+    <p id="confirmationError" class="error" role="alert" hidden></p>
+
+    <div class="review-actions">
+      <button type="button" id="backToDetails" class="btn ghost big">← Edit details</button>
+      <button type="button" id="confirmOrderBtn" class="btn big">Confirm order</button>
+    </div>
+    <p class="trust">1-year warranty · 7-day returns on unopened phones</p>
+  </section>
+
+  <section id="done" class="done" hidden>
+    <div class="tick" aria-hidden="true">✓</div>
+    <h1>Order placed</h1>
+    <p>Thank you, <strong id="doneName"></strong>. Your order number is <strong id="orderNo"></strong>.</p>
+    <p id="donePay"></p>
+    <p>We will call <strong id="donePhone"></strong> to confirm your delivery.</p>
+    <a class="btn" href="homepage.html">Back to the store</a>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+<script src="data/products.js"></script>
+<script src="script/checkoutPage.js"></script>
+<script src="script/foooter.js"></script>
+</body>
+</html>

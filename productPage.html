@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phone – Handset</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Sora:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style/homePage.css">
+<link rel="stylesheet" href="style/productPage/productPage.css">
+<link rel="stylesheet" href="style/footer.css">
+</head>
+<body>
+
+<header class="top">
+  <a class="logo" href="homePage.html">Handset</a>
+  <a class="back" href="homePage.html#shop">← All phones</a>
+  <a class="cart-btn" href="checkoutPage.html" aria-label="Go to cart and checkout">Cart <span id="count">0</span></a>
+</header>
+
+<main>
+  <section id="detail" class="detail" hidden>
+    <div class="stage">
+      <div class="phone big" id="phone"></div>
+      <div class="swatches" id="swatches"></div>
+      <p id="colorName" class="color-name"></p>
+    </div>
+
+    <div class="info">
+      <p id="brand" class="brand"></p>
+      <h1 id="name"></h1>
+      <div id="price" class="price"></div>
+      <ul id="highlights" class="highlights"></ul>
+
+      <div class="buy">
+        <div class="qty big-qty">
+          <button id="minus" aria-label="Decrease quantity">−</button>
+          <span id="qty">1</span>
+          <button id="plus" aria-label="Increase quantity">+</button>
+        </div>
+        <button id="add" class="btn">Add to cart</button>
+        <button id="buyNow" class="btn ghost">Buy now</button>
+      </div>
+
+      <h2>About this phone</h2>
+      <p id="about" class="about"></p>
+
+      <h2>Specifications</h2>
+      <dl id="specs" class="spec-list"></dl>
+
+      <h2>In the box</h2>
+      <ul class="box">
+        <li>Phone</li>
+        <li>USB-C cable</li>
+        <li>Quick start guide</li>
+        <li>Warranty card</li>
+      </ul>
+    </div>
+  </section>
+
+  <p id="missing" class="missing" hidden>We couldn’t find that phone. <a href="homePage.html#shop">Browse all phones</a>.</p>
+
+  <section id="relatedWrap" class="related" hidden>
+    <h2>You may also like</h2>
+    <div id="related" class="grid"></div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<div id="toast" class="toast" role="status"></div>
+<script src="data/products.js"></script>
+<script src="script/prodcutPage.js"></script>
+<script src="script/foooter.js"></script>
+</body>
+</html>
